@@ -55,3 +55,19 @@ main section{padding:52px 0}
 .gallery:has(>:only-child){grid-template-columns:1fr}
 .gallery:has(>:only-child) img{max-height:460px;border-radius:4px 4px 90px 4px}
 .gallery img{border-radius:4px}
+
+/* Fotos das três médicas: a atual e a antiga se alternam com um fundido suave */
+.photo-swap{position:relative;aspect-ratio:7/4;overflow:hidden;background:#efe9e2}
+.photo-swap img{position:absolute;inset:0;width:100%;height:100%!important;aspect-ratio:auto!important;max-height:none!important;border-radius:0!important;object-fit:cover;object-position:center}
+.photo-swap img.b{object-position:center 34%;opacity:0}
+.photo-swap img.a{animation:swapA 14s ease-in-out infinite}
+.photo-swap img.b{animation:swapB 14s ease-in-out infinite}
+.swap-cap{animation:swapA 14s ease-in-out infinite}
+@keyframes swapA{0%,42%{opacity:1}50%,92%{opacity:0}100%{opacity:1}}
+@keyframes swapB{0%,42%{opacity:0}50%,92%{opacity:1}100%{opacity:0}}
+.hero-photo .photo-swap{border-radius:160px 4px 4px 4px}
+.clinic .photo-swap{border-radius:4px 4px 120px 4px}
+.page-hero .photo-swap{border-radius:4px 4px 90px 4px}
+@media(max-width:760px){.hero-photo .photo-swap{border-radius:0}.clinic .photo-swap{border-radius:4px 4px 60px 4px}.page-hero .photo-swap{border-radius:4px 4px 60px 4px}}
+@media(prefers-reduced-motion:reduce){.photo-swap img,.swap-cap{animation:none}.photo-swap img.b{opacity:0}.swap-cap{opacity:1}}
+.hero-photo .photo-caption,.page-hero .photo-caption{font-size:12.5px;line-height:1.5;max-width:none;margin:12px 0 0}
