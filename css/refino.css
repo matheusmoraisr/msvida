@@ -107,3 +107,12 @@ main section{padding:52px 0}
 .list-card>img{width:calc(100% + 44px);margin:-24px -22px 20px;height:170px}
 .source-copy li{font-size:16px}
 }
+
+/* Celular: rótulos e textos de apoio legíveis (mínimo 11 px; textos de leitura 12,5 px ou mais) */
+@media(max-width:760px){
+.topline{font-size:11px;letter-spacing:1.2px;padding:9px 12px}
+.eyebrow,.number,.doctor .role,.doctor-feature .role,.post .meta,.article small,.cover-card small{font-size:11px;letter-spacing:1.2px}
+.service .ask,.post .where,.where strong,.quote figcaption,.quote figcaption span{font-size:13px}
+.floating{font-size:12.5px;padding:12px 18px}
+.crumbs{font-size:12px}
+}
