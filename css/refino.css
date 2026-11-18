@@ -116,3 +116,34 @@ main section{padding:52px 0}
 .floating{font-size:12.5px;padding:12px 18px}
 .crumbs{font-size:12px}
 }
+
+/* ==========================================================================
+   Depoimentos: um em destaque + carrossel de cartões curtos (texto completo em janela)
+   ========================================================================== */
+.depo .section-head{align-items:end;margin-bottom:34px}
+.tnav{display:flex;gap:10px}
+.tnav button{background:#fff;border:1px solid #d9c6ba;border-radius:26px;padding:9px 20px;font-size:13px;font-weight:600;color:var(--ink);cursor:pointer}
+.tnav button:hover{border-color:var(--orange);color:var(--orange)}
+.tavatar{display:inline-flex;align-items:center;justify-content:center;flex:none;width:42px;height:42px;border-radius:50%;background:var(--orange);color:#fff;font:600 13px/1 'Montserrat',Arial,sans-serif;letter-spacing:.4px}
+.tfeature{margin:0 0 30px;padding:46px 52px;background:#fff0e6;border:1px solid #f0d9c9;border-radius:2px 2px 90px 2px}
+.tfeature blockquote{margin:0;max-width:880px;font:500 clamp(24px,2.5vw,33px)/1.42 'Montserrat',Arial,sans-serif;letter-spacing:-.6px;color:var(--ink)}
+.tfeature figcaption{display:flex;align-items:center;gap:14px;margin-top:28px;font-size:14px;font-weight:600;color:var(--ink)}
+.ttrack{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 20px;scrollbar-width:thin;scrollbar-color:#d9c6ba transparent;outline-offset:6px}
+.tcard{flex:0 0 min(384px,86%);scroll-snap-align:start;display:flex;flex-direction:column;background:#fffdfa;border:1px solid var(--line);border-top:3px solid var(--orange);border-radius:2px;padding:26px 26px 22px}
+.tmeta{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.tname{font-size:13px;font-weight:600;color:var(--ink)}
+.tcard blockquote{margin:0;font-size:16px;line-height:1.7;color:#3d3d3d}
+.js .tcard blockquote{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:7;overflow:hidden}
+.tmore{align-self:flex-start;margin-top:auto;padding:16px 0 4px;background:none;border:0;font-size:13px;font-weight:600;color:var(--orange);text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.tmore[hidden]{display:none}
+.tdialog{width:min(640px,calc(100% - 36px));border:0;border-radius:4px;padding:36px 36px 30px;color:var(--ink);background:#fffdfa;box-shadow:0 30px 80px #0004}
+.tdialog::backdrop{background:#2a211c99}
+.tdialog .tmeta{margin-bottom:20px}
+.tdialog blockquote{margin:0;font-size:17px;line-height:1.8;color:#3d3d3d;display:block}
+.tclose{margin-top:26px;background:var(--orange);color:#fff;border:0;border-radius:26px;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer}
+.tcard.expanded blockquote{-webkit-line-clamp:unset;display:block}
+@media(max-width:760px){
+.tfeature{padding:30px 24px;border-radius:2px 2px 60px 2px}
+.tnav{margin-top:18px}
+.tcard{flex-basis:86%}
+}

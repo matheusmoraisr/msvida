@@ -31,3 +31,19 @@ filters.addEventListener('click',e=>{const b=e.target.closest('button');if(b)fil
 filter(new URL(location.href).searchParams.get('category')||'todas');
 window.addEventListener('popstate',()=>filter(new URL(location.href).searchParams.get('category')||'todas'));
 }
+
+/* Depoimentos: carrossel com botões e janela para ler o texto completo. */
+(function(){
+document.documentElement.classList.add('js');
+const track=document.querySelector('.ttrack'); if(!track) return;
+const cards=[...track.querySelectorAll('.tcard')];
+const dlg=document.querySelector('.tdialog');
+function marcar(){cards.forEach(c=>{const b=c.querySelector('blockquote'),t=c.querySelector('.tmore');if(t)t.hidden=!(b.scrollHeight>b.clientHeight+2)});}
+marcar(); window.addEventListener('load',marcar); window.addEventListener('resize',marcar);
+document.querySelectorAll('.tnav button').forEach(b=>b.addEventListener('click',()=>{const w=cards[0].getBoundingClientRect().width+22;track.scrollBy({left:Number(b.dataset.dir)*w,behavior:'smooth'});}));
+cards.forEach(c=>{const t=c.querySelector('.tmore');if(!t)return;t.addEventListener('click',()=>{
+ if(dlg&&dlg.showModal){const body=dlg.querySelector('.tdbody');body.innerHTML='';const meta=c.querySelector('.tmeta').cloneNode(true);const q=c.querySelector('blockquote').cloneNode(true);body.append(meta,q);dlg.showModal();}
+ else{c.classList.add('expanded');t.hidden=true;}
+});});
+if(dlg){dlg.querySelector('.tclose').addEventListener('click',()=>dlg.close());dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close();});}
+})();
