@@ -52,3 +52,6 @@ main section{padding:52px 0}
 }
 .related-head h2,.section-head h2{margin-bottom:0}
 .related-head{align-items:end;margin-bottom:30px}
+.gallery:has(>:only-child){grid-template-columns:1fr}
+.gallery:has(>:only-child) img{max-height:460px;border-radius:4px 4px 90px 4px}
+.gallery img{border-radius:4px}
