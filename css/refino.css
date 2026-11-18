@@ -144,6 +144,7 @@ main section{padding:52px 0}
 .tcard.expanded blockquote{-webkit-line-clamp:unset;display:block}
 @media(max-width:760px){
 .tfeature{padding:30px 24px;border-radius:2px 2px 60px 2px}
+.tfeature blockquote{font-size:19px;line-height:1.5;letter-spacing:-.3px}
 .tnav{margin-top:18px}
 .tcard{flex-basis:86%}
 }

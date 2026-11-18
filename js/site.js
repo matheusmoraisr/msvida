@@ -40,7 +40,7 @@ const cards=[...track.querySelectorAll('.tcard')];
 const dlg=document.querySelector('.tdialog');
 function marcar(){cards.forEach(c=>{const b=c.querySelector('blockquote'),t=c.querySelector('.tmore');if(t)t.hidden=!(b.scrollHeight>b.clientHeight+2)});}
 marcar(); window.addEventListener('load',marcar); window.addEventListener('resize',marcar);
-document.querySelectorAll('.tnav button').forEach(b=>b.addEventListener('click',()=>{const w=cards[0].getBoundingClientRect().width+22;track.scrollBy({left:Number(b.dataset.dir)*w,behavior:'smooth'});}));
+document.querySelectorAll('.tnav button').forEach(b=>b.addEventListener('click',()=>{const w=cards[0].getBoundingClientRect().width+22;const x0=track.scrollLeft,dx=Number(b.dataset.dir)*w;track.scrollBy({left:dx,behavior:'smooth'});setTimeout(()=>{if(Math.abs(track.scrollLeft-x0)<2)track.scrollBy({left:dx,behavior:'auto'});},600);}));
 cards.forEach(c=>{const t=c.querySelector('.tmore');if(!t)return;t.addEventListener('click',()=>{
  if(dlg&&dlg.showModal){const body=dlg.querySelector('.tdbody');body.innerHTML='';const meta=c.querySelector('.tmeta').cloneNode(true);const q=c.querySelector('blockquote').cloneNode(true);body.append(meta,q);dlg.showModal();}
  else{c.classList.add('expanded');t.hidden=true;}
