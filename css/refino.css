@@ -71,3 +71,8 @@ main section{padding:52px 0}
 @media(max-width:760px){.hero-photo .photo-swap{border-radius:0}.clinic .photo-swap{border-radius:4px 4px 60px 4px}.page-hero .photo-swap{border-radius:4px 4px 60px 4px}}
 @media(prefers-reduced-motion:reduce){.photo-swap img,.swap-cap{animation:none}.photo-swap img.b{opacity:0}.swap-cap{opacity:1}}
 .hero-photo .photo-caption,.page-hero .photo-caption{font-size:12.5px;line-height:1.5;max-width:none;margin:12px 0 0}
+
+/* Imagens da origem com baixa resolução: mostradas no tamanho real, sem esticar nem borrar */
+.list-card img[src$="39f0d9fa852d4f0d.webp"],.list-card img[src$="345303c7da89465b.webp"],.list-card img[src$="083002d0780d3233.webp"],.list-card img[src$="b438bb692890245f.webp"]{width:215px;max-width:100%;height:auto;aspect-ratio:215/169;border-radius:4px}
+.source-photo img[src$="2068e9eb1d46de73.webp"]{width:auto;max-width:300px;margin:0 auto;border-radius:6px}
+.article-figure img[src$="1949c7ed3641ddaa.webp"],.article-figure img[src$="d96fc84b00bde809.webp"],.article-figure img[src$="b438bb692890245f.webp"],.article-cover[src$="1949c7ed3641ddaa.webp"],.article-cover[src$="d96fc84b00bde809.webp"],.article-cover[src$="b438bb692890245f.webp"]{width:auto;max-width:min(100%,380px);height:auto;border-radius:6px}
