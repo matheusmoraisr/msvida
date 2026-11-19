@@ -148,3 +148,8 @@ main section{padding:52px 0}
 .tnav{margin-top:18px}
 .tcard{flex-basis:86%}
 }
+
+/* Cartões da equipe: botões de agendar alinhados na base, mesmo com textos de tamanhos diferentes */
+.doctor{display:flex;flex-direction:column}
+.doctor .textlink{margin-top:auto;align-self:flex-start}
+.doctor p:not(.role){margin-bottom:22px}
